@@ -6,7 +6,7 @@ import json
 import time
 
 if len(sys.argv) < 2:
-	print "usage: {0} <function> [arguments]"
+	print "usage: {0} <function> [arguments]\nuse help for list command"
 	sys.exit(1)
 
 def init_session():
@@ -17,6 +17,9 @@ def ls():
 	ec2 = init_session()
 	for i in ec2.instances.all():
 		print(i)
+
+def help():
+	print "list command:\nstart [instance_name]\nstop [instance_name]\nstate"
 
 def stop():
 	ec2 = init_session()
