@@ -78,12 +78,13 @@ def state():
 		tags = i.tags
 		public_dns_name = i.public_dns_name
 		public_ip_addr = i.public_ip_address
+		private_ip_addr = i.private_ip_address
 		instance_name = ''
 		for x in tags:
 			if(x['Key'] == 'Name'):
 				instance_name = x['Value']
 
-		print 'instance_name: %s state: %s public_dns_name: %s public_ip_address: %s' % (instance_name, state, public_dns_name, public_ip_addr)
+		print 'instance_name: %s state: %s public_dns_name: %s public_ip_address: %s private_ip_address: %s\n' % (instance_name, state, public_dns_name, public_ip_addr, private_ip_addr)
 
 if __name__ == '__main__':
 	getattr(sys.modules[__name__], sys.argv[1])()
